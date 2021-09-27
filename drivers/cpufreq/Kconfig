@@ -53,13 +53,6 @@ choice
 	  This option sets which CPUFreq governor shall be loaded at
 	  startup. If in doubt, select 'performance'.
 
-config CPU_FREQ_DEFAULT_GOV_THUNDERX
-	bool "thunderx"
-	select CPU_FREQ_GOV_THUNDERX
-	help
-	  Uses ThunderX as Your Default Governor
-
-
 config CPU_FREQ_DEFAULT_GOV_PERFORMANCE
 	bool "performance"
 	select CPU_FREQ_GOV_PERFORMANCE
@@ -85,13 +78,6 @@ config CPU_FREQ_DEFAULT_GOV_USERSPACE
 	  you to set the CPU frequency manually or when a userspace 
 	  program shall be able to set the CPU dynamically without having
 	  to enable the userspace governor manually.
-
-config CPU_FREQ_GOV_THUNDERX
-	tristate "'thunderx' cpufreq governor"
-	depends on CPU_FREQ
-	help
-	  'thunderx' - a "power optimized" governor for Mediatek SoCs
-
 
 config CPU_FREQ_DEFAULT_GOV_ONDEMAND
 	bool "ondemand"
@@ -125,6 +111,12 @@ config CPU_FREQ_DEFAULT_GOV_INTERACTIVE
 	  you to get a full dynamic cpu frequency capable system by simply
 	  loading your cpufreq low-level hardware driver, using the
 	  'interactive' governor for latency-sensitive workloads.
+
+config CPU_FREQ_DEFAULT_GOV_THUNDERX
+        bool "thunderx"
+        select CPU_FREQ_GOV_THUNDERX
+        help
+          Uses ThunderX as Your Default Governor
 
 endchoice
 
@@ -200,6 +192,12 @@ config CPU_FREQ_GOV_INTERACTIVE
 	  For details, take a look at linux/Documentation/cpu-freq.
 
 	  If in doubt, say N.
+
+config CPU_FREQ_GOV_THUNDERX
+        tristate "'thunderx' cpufreq governor"
+        depends on CPU_FREQ
+        help
+          'thunderx' - a "power optimized" governor for Mediatek SoCs
 
 config CPU_FREQ_GOV_CONSERVATIVE
 	tristate "'conservative' cpufreq governor"
