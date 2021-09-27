@@ -218,7 +218,7 @@ int hps_cpu_init(void)
     }
 
     //init bound in hps_ctxt
-    hps_ctxt.little_num_base_perf_serv = 1;
+    hps_ctxt.little_num_base_perf_serv = 3;
     hps_ctxt.little_num_limit_thermal = cpumask_weight(&hps_ctxt.little_cpumask);
     hps_ctxt.little_num_limit_low_battery = cpumask_weight(&hps_ctxt.little_cpumask);
     hps_ctxt.little_num_limit_ultra_power_saving = cpumask_weight(&hps_ctxt.little_cpumask);
