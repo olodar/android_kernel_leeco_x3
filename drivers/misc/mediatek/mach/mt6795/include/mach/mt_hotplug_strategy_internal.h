@@ -48,9 +48,9 @@ extern "C" {
  * CONFIG - runtime
  * Execute time interval : 100 ms
  */
-#define DEF_CPU_UP_THRESHOLD                (95)
+#define DEF_CPU_UP_THRESHOLD                (80)
 #define DEF_CPU_UP_TIMES                    (2)
-#define DEF_CPU_DOWN_THRESHOLD              (85)
+#define DEF_CPU_DOWN_THRESHOLD              (65)
 #define DEF_CPU_DOWN_TIMES                  (8)
 #define DEF_TLP_TIMES                       (1)
 
